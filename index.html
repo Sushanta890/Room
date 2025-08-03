@@ -1,22 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Play It Yourself</title>
+  <style type="text/css">
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: bgChange 30s infinite linear;
+      background-size: 400% 400%;
+    }
 
-  <title>HTML</title>
-  
-  <!-- HTML -->
-  
+    @keyframes bgChange {
+      0%   { background: linear-gradient(45deg, #ff9a9e, #fad0c4); }
+      25%  { background: linear-gradient(45deg, #a1c4fd, #c2e9fb); }
+      50%  { background: linear-gradient(45deg, #d4fc79, #96e6a1); }
+      75%  { background: linear-gradient(45deg, #84fab0, #8fd3f4); }
+      100% { background: linear-gradient(45deg, #ffecd2, #fcb69f); }
+    }
 
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="style.css">
+    .dd {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dd-btn {
+      padding: 15px;
+      text-align: center;
+      background: #173459;
+      border: none;
+      width: 300px;
+      color: #f8f9f9;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .dd-content {
+      position: absolute;
+      width: 100%;
+      box-shadow: 0 18px 36px rgba(0,0,0,0.30), 0 14px 11px rgba(0,0,0,0.22);
+      height: 0px;
+      transition: height 1s;
+      overflow: hidden;
+      background: #fff;
+      border-radius: 4px;
+    }
+
+    .dd:hover > .dd-content {
+      height: 300px;
+    }
+
+    .dd-content > a {
+      display: block;
+      padding: 15px;
+      text-decoration: none;
+      color: black;
+      transition: background 0.3s;
+    }
+
+    .dd-content > a:hover {
+      background-color: #e0e0e0;
+    }
+  </style>
 </head>
-
 <body>
-  <p>Nothing to see here...</p>
-  <!-- Project -->
-  <script src="main.js"></script>
+  <div class="dd">
+    <button class="dd-btn"> Hover or Tap me! </button>
+    <div class="dd-content">
+      <a href="room/login.html"> Login </a>
+      <a href="room/rent-room.html"> Room rent </a>
+      <a href="view-purchases.html"> Purchases </a>
+      <a href="electrical bill/electrical-bill.html"> Electrical bill</a>
+      <a href="Gas/gas-bill.html"> Gas Bill </a>
+      <a href="room/view-rent.html"> All view  </a>
+    </div>
+  </div>
 </body>
 </html>
